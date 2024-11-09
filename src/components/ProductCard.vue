@@ -4,7 +4,7 @@
       <div class="p-4">
         <h2 class="text-xl font-semibold mb-2 text-dark">{{ product.name }}</h2>
         <p class="text-muted">{{ product.description }}</p>
-        <p class="text-lg font-bold text-primary mt-2">Precio: {{ product.price }} MXN</p>
+        <p class="text-lg font-bold text-primary mt-2">Precio: {{ product.price }} $</p>
         <router-link
           :to="`/products/${product.category}/${product.id}`"
           class="inline-block mt-4 bg-primary text-light py-2 px-4 rounded hover:bg-secondary"
