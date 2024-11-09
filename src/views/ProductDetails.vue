@@ -3,26 +3,42 @@
       <h1 class="product-title">{{ product.name }}</h1>
       <img :src="product.image" alt="Imagen del producto" class="product-image" />
       <p class="product-description">{{ product.description }}</p>
-      <p class="product-price">Precio: ${{ product.price.toFixed(2) }}</p>
+      <p class="product-price">Precio: ${{ product.price ? product.price.toFixed(2) : '0.00' }}</p>
       <button class="add-to-cart" @click="addToCart">Agregar al Carrito</button>
     </div>
   </template>
   
   <script>
+  import ProductsData from "@/productsData.js";
+  
   export default {
     name: "ProductDetails",
     data() {
       return {
-        product: {},
+        product: null,
       };
     },
     created() {
-      // Supone que el producto viene a través de las rutas
-      this.product = this.$route.params.product;
+      // Obtiene el ID desde los parámetros de la ruta
+      const productId = Number(this.$route.params.id);
+  
+      // Encuentra el producto en ProductsData
+      for (const category in ProductsData) {
+        const foundProduct = ProductsData[category].find(
+          (prod) => prod.id === productId
+        );
+        if (foundProduct) {
+          this.product = foundProduct;
+          break;
+        }
+      }
+  
+      if (!this.product) {
+        console.error("Producto no encontrado");
+      }
     },
     methods: {
       addToCart() {
-        // Emite un evento para agregar al carrito
         this.$emit("add-to-cart", this.product);
       },
     },

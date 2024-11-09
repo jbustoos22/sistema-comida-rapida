@@ -12,6 +12,12 @@ const routes = [
   { path: "/menu", name: "Menu", component: Menu },
   { path: "/contact", name: "Contact", component: Contact },
   { path: "/product-details", name: "ProductDetails", component: ProductDetails },
+  {
+    path: '/product/:id',
+    name: 'ProductDetails',
+    component: () => import('@/views/ProductDetails.vue')
+  }
+  
 ];
 
 const router = createRouter({
