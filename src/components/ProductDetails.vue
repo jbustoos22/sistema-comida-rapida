@@ -5,7 +5,7 @@
         <div class="md:ml-8">
           <h2 class="text-3xl font-bold mb-4 text-dark">{{ product.name }}</h2>
           <p class="text-muted text-lg">{{ product.description }}</p>
-          <p class="text-2xl font-bold text-primary mt-4">Precio: {{ product.price }} MXN</p>
+          <p class="text-2xl font-bold text-primary mt-4">Precio: {{ product.price }} $</p>
           <button class="mt-6 bg-primary text-light py-2 px-6 rounded hover:bg-secondary">
             Agregar al Carrito
           </button>
