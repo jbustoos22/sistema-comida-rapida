@@ -1,5 +1,5 @@
 <template>
-    <div class="contact">
+    <div class="contact" style="color:black">
       <h1 class="page-title">Contacto</h1>
       <p>Dirección: Calle Principal #123, Ciudad, País</p>
       <p>Teléfono: +1 234 567 890</p>
